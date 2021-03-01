@@ -1,0 +1,14 @@
+#current-weather-icon {
+  font-size: 65px;
+  padding-top: 10px;
+}
+
+.current-temperature strong {
+  font-size: 45px;
+  font-weight: 100;
+}
+
+.current-temperature .units {
+  position: relative;
+  top: -20px;
+}

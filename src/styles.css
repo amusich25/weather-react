@@ -1,0 +1,13 @@
+.container {
+  padding-top: 30px;
+  font-family: "Lato", sans-serif;
+  color: #eff7e1;
+}
+
+.weather-app {
+  background-color: #214151;
+  border: 1px solid #dfe1e5;
+  margin: 0 auto;
+  border-radius: 5px;
+  padding-bottom: 10px;
+}
