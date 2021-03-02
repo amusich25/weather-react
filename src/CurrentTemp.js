@@ -12,11 +12,11 @@ export default function CurrentTemp() {
       ></img>
       <strong id="currenttemp">54</strong>
       <span className="units">
-        <a href="#" id="fahrenheit-link" className="active">
+        <a href="/" id="fahrenheit-link" className="active">
           °F
         </a>{" "}
         |
-        <a href="#" id="celsius-link">
+        <a href="/" id="celsius-link">
           °C
         </a>
       </span>
