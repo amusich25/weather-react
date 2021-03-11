@@ -1,5 +1,5 @@
 import React from "react";
-import "./currentinfo.css";
+import "./currenttemp.css";
 
 export default function CurrentTemp() {
   return (
@@ -10,7 +10,8 @@ export default function CurrentTemp() {
         className="float-left"
         id="current-weather-icon"
       ></img>
-      <strong id="currenttemp">54</strong>
+      <div className="float-left"> 
+      <span className="currenttemp">54</span>
       <span className="units">
         <a href="/" id="fahrenheit-link" className="active">
           °F
@@ -20,6 +21,7 @@ export default function CurrentTemp() {
           °C
         </a>
       </span>
+      </div>
     </div>
   );
 }

@@ -21,7 +21,7 @@ export default function Search() {
             Current Location
           </button>
         </div>
-      </form>
+        </form>
     </div>
   );
 }

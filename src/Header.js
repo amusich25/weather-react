@@ -5,8 +5,11 @@ import "./header.css";
 export default function Header() {
   return (
     <div className="header">
-      <div class="row">
-        <div class="col-6">
+      <div>
+          <div>
+          <Search />
+        </div>
+        <div>
           <h1 id="city">Santa Cruz</h1>
           <ul class="current-date">
             <li id="day">Sunday</li>
@@ -16,9 +19,7 @@ export default function Header() {
             </li>
           </ul>
         </div>
-        <div class="col-6">
-          <Search />
-        </div>
+        
       </div>
     </div>
   );

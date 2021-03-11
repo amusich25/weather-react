@@ -1,4 +1,16 @@
-i {
+#current-weather-icon {
   color: #79a3b1;
-  font-size: 25px;
+  height: 74px;
+}
+
+.currenttemp {
+  font-size: 40px;
+  line-height: 74px;
+  margin-right: 10px;
+}
+
+.units {
+  font-size: 16px;
+  position: relative;
+  top: -20px;
 }
