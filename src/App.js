@@ -1,6 +1,5 @@
 import React from "react";
 import Weather from "./Weather";
-import CurrentInfo from "./CurrentInfo";
 import Footer from "./Footer";
 import "./styles.css";
 
