@@ -26,7 +26,7 @@ export default function CurrentInfo(props) {
             </div>
         </div>
         <div className="col-6">
-            <InfoBreakdown />
+            <InfoBreakdown data={props.data}/>
         </div>
       </div>
     </div>
