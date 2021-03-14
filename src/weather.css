@@ -22,6 +22,7 @@ li {
   max-width: 400px;
   padding-top: 10px;
   padding-left: 20px;
+  height: 35px;
 }
 
 .changeloc {
@@ -32,6 +33,9 @@ li {
   box-shadow: 1px 1px 2px black;
   border-color: #f8dc81;
   margin-left: 5px;
+  display: inline;
+  height: 35px;
+  margin-top: 20px;
 }
 
 .locbutton {
@@ -41,6 +45,12 @@ li {
   border: 10px;
   box-shadow: 1px 1px 2px black;
   border-color: #f8dc81;
-  margin-top: 5px;
+  margin-top: 20px;
   margin-left: 10px;
+  display: inline;
+  height: 35px;
+}
+
+.Weather canvas {
+  margin: 10px auto;
 }

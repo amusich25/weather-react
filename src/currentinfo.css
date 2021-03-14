@@ -1,6 +1,7 @@
 #current-weather-icon {
   font-size: 65px;
   padding-top: 10px;
+  margin-left: 25px;
 }
 
 .current-temperature strong {

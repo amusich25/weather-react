@@ -40,8 +40,9 @@ function search () {
 
   if (weatherData.ready) {
    return (
+     <div className="Weather">
     <div className="search">
-      <form id="search-form" onSubmit={handleSubmit}>
+        <form id="search-form" onSubmit={handleSubmit} class="form-inline">
         <div className="search-bar">
           <input
             type="search"
@@ -53,14 +54,15 @@ function search () {
             autoFocus="on"
             onChange={handleCityChange}
           ></input>
+          </div>
           <button type="button" className="changeloc" id="changloc">
             Search
           </button>
           <button type="button" className="locbutton" id="locbutton">
             Current Location
           </button>
-        </div>
         </form>
+        </div>
         <CurrentInfo data={weatherData} />
     </div>
   );
