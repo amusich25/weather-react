@@ -4,12 +4,12 @@ import "./currenttemp.css";
 export default function CurrentTemp(props) {
     const [unit, setUnit] = useState("fahrenheit");
     function showCelsius(event) {
-        event.preventDefualt ();
+        event.preventDefault ();
         setUnit("celsius");
     }
 
     function showFahrenheit(event) {
-        event.preventDefualt();
+        event.preventDefault();
         setUnit("fahrenheit");
     }
 
@@ -17,15 +17,13 @@ export default function CurrentTemp(props) {
         return (props.fahrenheit - 32) * 5/9;
     }
 
-    if (unit==="fahrenhiet") {
+    if (unit==="fahrenheit") {
        return (
       <div className="float-left"> 
       <span className="currenttemp">{Math.round(props.fahrenheit)}</span>
       <span className="units">
-        <a href="/" id="fahrenheit-link" className="active">
           °F
-        </a>{" "}
-        |
+        |{" "}
         <a href="/" id="celsius-link" onClick={showCelsius}>
           °C
         </a>
@@ -35,17 +33,14 @@ export default function CurrentTemp(props) {
     } else {
         return (
             <div className="float-left"> 
-      <span className="currenttemp">{Math.round(celsius())}</span>
-      <span className="units">
-        <a href="/" id="fahrenheit-link" className="active" onClick={showFahrenheit}>
-          °F
-        </a>{" "}
-        |
-        <a href="/" id="celsius-link">
-          °C
-        </a>
-      </span>
-      </div>
+                <span className="currenttemp">{Math.round(celsius())}</span>
+                <span className="units">
+                    <a href="/" id="fahrenheit-link" onClick={showFahrenheit}>
+                        °F
+                    </a>{" "}
+                    | °C
+                </span>
+            </div>
         );
     }
 }

@@ -22,7 +22,7 @@ export default function CurrentInfo(props) {
         <div className="col-6">
             <div className="clearfix current-temperature">
                 <WeatherIcon code ={props.data.icon} />
-                <CurrentTemp temperature={props.data.temperature} />
+                <CurrentTemp fahrenheit={props.data.temperature} />
             </div>
         </div>
         <div className="col-6">
