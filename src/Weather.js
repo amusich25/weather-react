@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./header.css";
+import "./weather.css";
 import CurrentInfo from "./CurrentInfo";
 import axios from "axios";
 
