@@ -1,15 +1,8 @@
-import React, { useStates } from "react";
+import React from "react";
 import "./currenttemp.css";
 
-export default function CurrentTemp() {
+export default function CurrentTemp(props) {
   return (
-    <div className="clearfix current-temperature">
-      <img
-        src={weatherData.iconUrl}
-        alt={weatherData.description}
-        className="float-left"
-        id="current-weather-icon"
-      ></img>
       <div className="float-left"> 
       <span className="currenttemp">{props.data.temperature}</span>
       <span className="units">
@@ -22,6 +15,5 @@ export default function CurrentTemp() {
         </a>
       </span>
       </div>
-    </div>
   );
 }

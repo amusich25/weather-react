@@ -1,19 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import "./header.css";
 import CurrentInfo from "./CurrentInfo";
 import axios from "axios";
 
-export default function Weather() {
+export default function Weather(props) {
+  const [weatherData, setWeatherData] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity);
   
-const [weatherData, setWeatherData] = useState({ ready: false });
-const [city, setCity] = useState(props.defaultCity);
-
-function handleResponse(response) {
+  function handleResponse(response) {
     setWeatherData({
         ready: true,
         temperature: response.data.main.temp,
         humidity: response.data.main.humidity,
-        date: new Date(response.data.dt *1000),
+        date: new Date(response.data.dt * 1000),
         description: response.data.weather[0].description,
         icon: response.data.weather[0].icon,
         wind:response.data.wind.speed,
@@ -22,7 +21,7 @@ function handleResponse(response) {
     
 }
 
-function handleSubmit(event) {
+  function handleSubmit(event) {
     event.preventDefault();
     search();
 }
@@ -32,26 +31,27 @@ function handleCityChange(event) {
 }
 
 function search () {
-    const apiKey = "8fb476c298015405b2d8169c9a04e3da";
+  const apiKey = "8fb476c298015405b2d8169c9a04e3da";
   let units = "imperial";
   let apiEndPoint = "https://api.openweathermap.org/data/2.5/weather";
   let apiUrl = `${apiEndPoint}?q=${city}&appid=${apiKey}&units=${units}`;
-axios.get(apiUrl).then(handleResponse);
+  axios.get(apiUrl).then(handleResponse);
 }
 
   if (weatherData.ready) {
    return (
-
     <div className="search">
-      <form id="search-form">
+      <form id="search-form" onSubmit={handleSubmit}>
         <div className="search-bar">
           <input
             type="search"
             id="city-input"
             name="name"
-            className="type"
+            className="form-control"
             placeholder="Enter New Location"
             size="30"
+            autoFocus="on"
+            onChange={handleCityChange}
           ></input>
           <button type="button" className="changeloc" id="changloc">
             Search
@@ -61,7 +61,7 @@ axios.get(apiUrl).then(handleResponse);
           </button>
         </div>
         </form>
-        <CurrentInfo />
+        <CurrentInfo data={weatherData} />
     </div>
   );
 }

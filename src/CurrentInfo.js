@@ -1,5 +1,6 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
+import WeatherIcon from "./WeatherIcon";
 import CurrentTemp from "./CurrentTemp";
 import InfoBreakdown from "./InfoBreakdown";
 
@@ -8,10 +9,10 @@ export default function CurrentInfo(props) {
     <div className="currentInfo">
       <div>
         <div>
-          <h1 id="city">{props.data.city}</h1>
+          <h1>{props.data.city}</h1>
           <ul class="current-date">
             <li>
-                <FormattedDate />
+                <FormattedDate date={props.data.date}/>
             </li>
             <li className="text-capitalize">{props.data.description}</li>
           </ul>
@@ -19,10 +20,13 @@ export default function CurrentInfo(props) {
       </div>
       <div className="row">
         <div className="col-6">
-          <CurrentTemp />
+            <div className="clearfix current-temperature">
+                <WeatherIcon code ={props.data.icon} />
+                <CurrentTemp temperature={props.data.temperature} />
+            </div>
         </div>
         <div className="col-6">
-          <InfoBreakdown />
+            <InfoBreakdown />
         </div>
       </div>
     </div>
