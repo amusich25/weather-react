@@ -41,7 +41,7 @@ function search () {
   if (weatherData.ready) {
    return (
      <div className="Weather">
-    <div className="search">
+      <div className="search">
         <form id="search-form" onSubmit={handleSubmit} class="form-inline">
         <div className="search-bar">
           <input
