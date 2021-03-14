@@ -42,7 +42,7 @@ function search () {
    return (
      <div className="Weather">
       <div className="search">
-        <form id="search-form" onSubmit={handleSubmit} class="form-inline">
+        <form id="search-form" onClick={handleSubmit} class="form-inline">
         <div className="search-bar">
           <input
             type="search"
