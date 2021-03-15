@@ -64,7 +64,9 @@ function search () {
           </button>
         </form>
         </div>
+        <div clasName="CurrentInfo">
         <CurrentInfo data={weatherData} />
+        </div>
         <WeatherForecast city={weatherData.city} />
         </div>
     

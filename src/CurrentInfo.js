@@ -18,13 +18,15 @@ export default function CurrentInfo(props) {
           </ul>
         </div>  
       </div>
-      <div className="row">
+      <div className="row mt-3">
         <div className="col-6">
             <div className="clearfix current-temperature">
                 <div className="float-left">
                 <WeatherIcon code ={props.data.icon} />
                 </div>
+                <div className="float-left">
                 <CurrentTemp fahrenheit={props.data.temperature} />
+                </div>
             </div>
         </div>
         <div className="col-6">
