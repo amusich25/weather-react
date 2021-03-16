@@ -27,17 +27,35 @@ export default function Weather(props) {
     search();
 }
 
-function handleCityChange(event) {
+  function handleCityChange(event) {
     setCity(event.target.value);
 }
 
-function search () {
-  const apiKey = "8fb476c298015405b2d8169c9a04e3da";
-  let units = "imperial";
-  let apiEndPoint = "https://api.openweathermap.org/data/2.5/weather";
-  let apiUrl = `${apiEndPoint}?q=${city}&appid=${apiKey}&units=${units}`;
-  axios.get(apiUrl).then(handleResponse);
-}
+  function search () {
+    const apiKey = "8fb476c298015405b2d8169c9a04e3da";
+    let units = "imperial";
+    let apiEndPoint = "https://api.openweathermap.org/data/2.5/weather";
+    let apiUrl = `${apiEndPoint}?q=${city}&appid=${apiKey}&units=${units}`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  function retrievePosition(position) {
+    let lat = position.coords.latitude;
+    let lon = position.coords.longitude;
+    let apiKey = "8fb476c298015405b2d8169c9a04e3da";
+    let units = "imperial";
+    let apiEndPoint = "https://api.openweathermap.org/data/2.5/weather";
+    let apiUrl = `${apiEndPoint}?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
+    axios.get(apiUrl).then(handleResponse);
+    
+    
+    apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  function getCurrentlocation() {
+    navigator.geolocation.getCurrentPosition(retrievePosition);
+  }
 
   if (weatherData.ready) {
    return (
@@ -56,10 +74,17 @@ function search () {
             onChange={handleCityChange}
           ></input>
           </div>
-          <button type="button" className="changeloc" id="changloc">
+          <button 
+          type="button" 
+          className="changeloc" 
+          id="changloc">
             Search
           </button>
-          <button type="button" className="locbutton" id="locbutton">
+          <button 
+          type="button" 
+          className="locbutton" 
+          id="locbutton"
+          onClick={getCurrentlocation}>
             Current Location
           </button>
         </form>

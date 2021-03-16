@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function FormattedDate(props) {
-function formateHours(timestamp) {
+    function formateHours(timestamp) {
         let date = new Date(timestamp);
         let hours = date.getHours();
         let minutes = date.getMinutes();
@@ -22,6 +22,7 @@ function formateHours(timestamp) {
     "Friday",
     "Saturday"
   ];
+  let now = new Date();
   let day = days[props.date.getDay()];
   let hours = props.date.getHours();
   if (hours < 10) {
@@ -34,7 +35,7 @@ function formateHours(timestamp) {
   }
   return (
     <div>
-      {day} {hours}:{minutes}
+      {day} {formateHours(now)}
     </div>
   );
 }
